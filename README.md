@@ -17,6 +17,27 @@ Text-to-image diffusion models can be misused to generate harmful content throug
 </div>
 
 
+
+
+## ⚠️ Content and Data Disclaimer
+
+**This repository contains and references sexually explicit prompts, adversarial jailbreak prompts,
+and figures with (censored) explicit imagery.** They appear only because removing such content is
+the problem this work studies.
+
+- **Purpose.** All prompts, prompt pairs, and benchmark files in this repository are released
+  **solely for reproducibility** of the results reported in the paper and for further research on
+  concept erasure and model safety. They are not intended for, and must not be used for, generating
+  harmful, explicit, or otherwise unsafe content.
+- **Third-party benchmarks.** The adversarial prompt sets (Ring-A-Bell, MMA-Diffusion, P4D) and the
+  I2P benchmark are redistributed from their original authors for evaluation purposes only, and
+  remain subject to their respective licenses and terms of use. Please cite the original work if you
+  use them.
+- **Responsible use.** By using this repository you agree to do so lawfully and ethically, in
+  accordance with the licenses of the underlying models (Stable Diffusion, FLUX) and datasets.
+
+
+
 ## ⚙️ Method Overview
 
 TEA adapts only the text encoder $\tau_\theta$ of a text-to-image model and leaves the generative
