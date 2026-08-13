@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+cache/
+outputs*/
+saved_models*/
+inference_*/
+coco_out/
+artist_out/
+eval_*/
+wandb/
+*.onnx
+.DS_Store
