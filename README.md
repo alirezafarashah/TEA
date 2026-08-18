@@ -1,11 +1,11 @@
 # TEA: Text Encoder Alignment for Robust Concept Erasure in Text-to-Image Models
 
-[![arXiv](https://img.shields.io/badge/arXiv-preprint-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![arXiv](https://img.shields.io/badge/arXiv-2608.15341-b31b1b.svg)](https://arxiv.org/abs/2608.15341)
 
 This repository is the official implementation of the paper
 **"TEA: Text Encoder Alignment for Robust Concept Erasure in Text-to-Image Models"** (preprint).
 
-### Authors: Alireza Farashah, Zhuan Shi, Negar Rostamzadeh, Golnoosh Farnadi
+### Authors: Alireza Dehghanpour Farashah, Zhuan Shi, Negar Rostamzadeh, Golnoosh Farnadi
 
 ## 📝 Abstract
 
@@ -340,13 +340,13 @@ python clip_score.py \
 If you find this work useful, please cite:
 
 ```bibtex
-@misc{farashah2026tea,
+@misc{farashah2026teatextencoderalignment,
       title={TEA: Text Encoder Alignment for Robust Concept Erasure in Text-to-Image Models},
-      author={Alireza Farashah and Zhuan Shi and Negar Rostamzadeh and Golnoosh Farnadi},
+      author={Alireza Dehghanpour Farashah and Zhuan Shi and Negar Rostamzadeh and Golnoosh Farnadi},
       year={2026},
-      eprint={XXXX.XXXXX},
+      eprint={2608.15341},
       archivePrefix={arXiv},
       primaryClass={cs.CV},
-      url={https://arxiv.org/abs/XXXX.XXXXX},
+      url={https://arxiv.org/abs/2608.15341},
 }
 ```
