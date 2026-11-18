@@ -206,7 +206,7 @@ def main():
                 filename = f"{row['coco_id']}.png"
             else:
                 if row.get("case_number") is not None:
-                    filename = f"{row['case_number']}_{seed}.png"
+                    filename = f"{row['case_number']}_{seed}_{index}.png"
                 else:
                     filename = f"{index}_{seed}.png"
                 

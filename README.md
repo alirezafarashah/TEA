@@ -92,6 +92,8 @@ checkpoints (e.g. `./cache/`).
 ├── stablediffusion_1/             # Same pipeline for SD-v1.4 (single CLIP text encoder)
 │   ├── train.py / main.py / trainer.py / train_utils.py / config.py
 │   ├── data_utils.py
+│   ├── multi_celebrity_erasure.py # Multi-celebrity erasure (one discriminator per celebrity)
+│   ├── celebrity_data.py          # Celebrity–anchor prompt pairs (MACE 1 / 5 / 10 celebrity sets)
 │   └── inference_dataset.py, inference_dataset_orig.py
 └── datasets/                      # Evaluation prompt sets
     ├── nudity-ring-a-bell.csv     # Ring-A-Bell adversarial prompts
@@ -297,7 +299,28 @@ rows of `big_artist_prompts.csv` by the `artist` column.
 
 ---
 
-# 3. Benign Generation Quality (COCO)
+# 3. Multi-Celebrity Erasure
+
+Erases 1, 5 or 10 celebrities at once on SD-v1.4, following the MACE celebrity sets
+(`--celebrity_set celebrity_1 | celebrity_5 | celebrity_10`). Each celebrity has 10 prompts, each paired
+with 5 prompts naming other celebrities (`stablediffusion_1/celebrity_data.py`). All pairs are trained
+jointly, with one discriminator per celebrity:
+
+```bash
+python -m stablediffusion_1.multi_celebrity_erasure \
+    --celebrity_set celebrity_10 \
+    --epochs 2 --batch_size 32 \
+    --lr_encoder 1e-5 --lr_disc 1e-3 \
+    --lambda_adv 0.1 --lambda_preserve 1.0 \
+    --save_dir ./saved_models_sd14_celebrity_10
+```
+
+Checkpoints are written to `saved_models_sd14_celebrity_10/text_encoder_epoch_{N}` and load with
+`stablediffusion_1.inference_dataset --full_model_path`.
+
+---
+
+# 4. Benign Generation Quality (COCO)
 
 FID and CLIP score are computed on 1k COCO captions. The inference scripts detect
 `coco_30k_10k.csv` by filename, sample 1000 rows with a fixed seed, and name each image
